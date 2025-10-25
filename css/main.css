@@ -23,23 +23,26 @@
   font-size: 26px;
 }
 
+/* Hover effect */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
+/* Active link */
 .topnav a.active {
-  background-color: #16681e;
+  background-color: #0b5722;
   color: white;
 }
 
+/* Hamburger icon */
 .topnav .icon {
   display: none;
 }
 
-/* Responsive nav bar */
+/* max-width */
 @media screen and (max-width: 800px) {
-  .topnav a:not(.active) {
+  .topnav a:not(:first-child) {
     display: none;
   }
 
@@ -50,6 +53,7 @@
 
   .topnav.responsive {
     position: relative;
+    max-width: 100%;
   }
 
   .topnav.responsive a.icon {
@@ -62,24 +66,6 @@
     float: none;
     display: block;
     text-align: left;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .topnav {
-    max-width: 100%;
-  }
-
-  .topnav a {
-    font-size: 22px;
-    padding: 12px 14px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav a {
-    font-size: 20px;
-    padding: 10px 12px;
   }
 }
 
