@@ -65,6 +65,24 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .topnav {
+    max-width: 100%;
+  }
+
+  .topnav a {
+    font-size: 22px;
+    padding: 12px 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {
+    font-size: 20px;
+    padding: 10px 12px;
+  }
+}
+
 /* Homepage video background */
 #myVideo {
   position: fixed;
