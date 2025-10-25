@@ -2,57 +2,67 @@
 <html>
 
 <head>
-    <title>My Favorite Place to Travel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>My Favorite Place to Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
-    <!-- Navigation bar -->
-    <div class="topnav" id="myTopnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="section1.html">Places to Visit</a>
-        <a href="section2.html">Food</a>
-        <a href="https://eng.taiwan.net.tw/">Learn More</a>
-        <a href="javascript:void(0);" class="icon">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
+  <div class="topnav" id="myTopnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="section1.html">Places to Visit</a>
+    <a href="section2.html">Food</a>
+    <a href="https://eng.taiwan.net.tw/" target="_blank">Learn More</a>
+    <a href="javascript:void(0);" class="icon">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 
-    <!-- Background video -->
-    <video autoplay muted loop id="myVideo">
-        <source src="img/taiwan.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+  <video autoplay muted loop id="myVideo">
+    <source src="img/taiwan.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 
-    <!-- Overlay content -->
-    <div class="content-overlay">
-        <h1>My Favorite Place to Travel</h1>
-        <p>
-            Taiwan is one of my favorite places to visit because it has <em>amazing food</em>, <em>beautiful landscapes</em>, and <em>bustling city life</em>.
-            I have so many fond memories here from <strong>visiting family</strong> to exploring all the <strong>historic museums</strong>.
-        </p>
-        <p>
-            I highly recommend anyone who hasn't had the chance to visit to experience this country at least once.
-        </p>
-        <button id="myBtn" onclick="toggleVideo()">Pause</button>
-    </div>
+  <div class="content-overlay">
+    <h1>My Favorite Place to Travel</h1>
+    <p>
+      Taiwan is one of my favorite places to visit because it has <em>amazing food</em>,
+      <em>beautiful landscapes</em>, and <em>bustling city life</em>. I have so many fond memories here
+      from <strong>visiting family</strong> to exploring all the <strong>historic museums</strong>.
+    </p>
+    <p>
+      I highly recommend anyone who hasn't had the chance to visit to experience this country at least once.
+    </p>
+    <button id="myBtn" onclick="toggleVideo()">Pause</button>
+  </div>
 
-    <script>
-        function toggleVideo() {
-            const video = document.getElementById("myVideo");
-            const btn = document.getElementById("myBtn");
-            if (video.paused) {
-                video.play();
-                btn.innerHTML = "Pause";
-            } else {
-                video.pause();
-                btn.innerHTML = "Play";
-            }
-        }
-    </script>
+  <script>
+    let icon = document.getElementsByClassName("icon")[0];
+    icon.addEventListener('click', responsive_control);
+
+    function responsive_control() {
+      let x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    function toggleVideo() {
+      const video = document.getElementById("myVideo");
+      const btn = document.getElementById("myBtn");
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+  </script>
 
 </body>
 
